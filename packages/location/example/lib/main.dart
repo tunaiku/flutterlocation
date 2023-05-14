@@ -1,9 +1,7 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:location/location.dart';
 import 'package:location_example/change_settings.dart';
 import 'package:location_example/enable_in_background.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import 'change_notification.dart';
 import 'get_location.dart';
@@ -44,20 +42,10 @@ class _MyHomePageState extends State<MyHomePage> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Demo Application'),
-          content: SingleChildScrollView(
+          content: const SingleChildScrollView(
             child: ListBody(
               children: <Widget>[
-                const Text('Created by Guillaume Bernos'),
-                InkWell(
-                  child: const Text(
-                    'https://github.com/Lyokone/flutterlocation',
-                    style: TextStyle(
-                      decoration: TextDecoration.underline,
-                    ),
-                  ),
-                  onTap: () =>
-                      launch('https://github.com/Lyokone/flutterlocation'),
-                ),
+                Text('Created by Guillaume Bernos'),
               ],
             ),
           ),
@@ -89,8 +77,8 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(32),
-          child: Column(
-            children: const <Widget>[
+          child: const Column(
+            children: <Widget>[
               PermissionStatusWidget(),
               Divider(height: 32),
               ServiceEnabledWidget(),
